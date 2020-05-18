@@ -33,5 +33,8 @@ Saturday May 16, 2020: Completed iteration 2 to switch views by clicking control
 
 ![gif of new cover generation based on form inputs after make new cover button click](/readmeAssets/iteration3.gif)   
 
-Sunday May 17, 2020:   
+Sunday May 17, 2020: Completed iteration 4 to get save cover button to save covers to covers array and display saved covers on saved covers page.   
+
+![gif of save cover button click and saved cover page with saved covers](/readmeAssets/iteration4.gif)   
+
 Monday May 18, 2020:   
