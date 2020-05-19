@@ -33,8 +33,8 @@ function deleteClickedCover(event) {
   console.log(deleteCoverID);
 
   for (var i = 0; i < savedCovers.length; i++) {
-    if (savedCovers[i].id === coverObject.id) {
-
+    if (savedCovers[i].id == event.target.id) {
+      savedCovers.splice(i, 1);
     };
   };
 };
@@ -137,6 +137,7 @@ function coverNotSaved(coverObject) {
 // };
 
 function showSavedCoversArray() {
+  savedCoversSection.innerHTML = '';
   for (var i = 0; i < savedCovers.length; i++) {
     var coverObject = savedCovers[i];
     savedCoversSection.innerHTML += `<section class="mini-cover" id=${coverObject.id}>
