@@ -20,12 +20,17 @@ var savedCovers = [];
 var currentCover = randomizedCover();
 
 window.onload = displayCover(currentCover);
-randomCoverButton.addEventListener("click", displayRandomCover);
+randomCoverButton.addEventListener('click', displayRandomCover);
 makeMyBookButton.addEventListener('click', displayMyBook);
-homeButton.addEventListener("click", moveToHomePage);
-makeNewButton.addEventListener("click", displayFormView);
-viewSavedButton.addEventListener("click", displaySavedView);
-saveCoverButton.addEventListener("click", saveCurrentCover);
+homeButton.addEventListener('click', moveToHomePage);
+makeNewButton.addEventListener('click', displayFormView);
+viewSavedButton.addEventListener('click', displaySavedView);
+saveCoverButton.addEventListener('click', saveCurrentCover);
+savedCoversSection.addEventListener('dblclick', deleteClickedCover)
+
+function deleteClickedCover() {
+  
+};
 
 function moveToHomePage() {
   homePage.classList.remove('hidden');
