@@ -31,6 +31,12 @@ savedCoversSection.addEventListener('dblclick', deleteClickedCover)
 function deleteClickedCover(event) {
   var deleteCoverID = event.target.id;
   console.log(deleteCoverID);
+
+  for (var i = 0; i < savedCovers.length; i++) {
+    if (savedCovers[i].id === coverObject.id) {
+
+    };
+  };
 };
 
 function moveToHomePage() {
