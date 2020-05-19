@@ -24,48 +24,51 @@ var currentCover = randomizedCover();
 
 // Add your event listeners here 👇
 window.onload = displayCover(currentCover);
-
 randomCoverButton.addEventListener("click", displayRandomCover);
+makeMyBookButton.addEventListener('click', displayMyBook);
+homeButton.addEventListener("click", moveToHomePage);
+makeNewButton.addEventListener("click", displayFormView);
+viewSavedButton.addEventListener("click", displaySavedView);
+saveCoverButton.addEventListener("click", saveCurrentCover);
 
-makeMyBookButton.addEventListener('click', function(){
+// Create your event handlers and other functions here 👇
+function displayRandomCover() {
+  currentCover = randomizedCover();
+  displayCover(currentCover);
+};
+
+function displayMyBook() {
   event.preventDefault();
   moveToHomePage();
   addInputToArrays();
   var createdCover = new Cover(coverInput.value, titleInput.value, userDesc1.value, userDesc2.value);
   displayCover(createdCover);
   currentCover = createdCover;
-})
+};
 
-homeButton.addEventListener("click", moveToHomePage);
-
-makeNewButton.addEventListener("click", function() {
+function displayFormView() {
   homePage.classList.add('hidden');
   savedCoversPage.classList.add('hidden');
   randomCoverButton.classList.add('hidden');
   saveCoverButton.classList.add('hidden');
   homeButton.classList.remove('hidden');
   formPage.classList.remove('hidden');
-});
+};
 
-viewSavedButton.addEventListener("click", function() {
+function displaySavedView() {
   homePage.classList.add('hidden');
   formPage.classList.add('hidden');
   savedCoversPage.classList.remove('hidden');
   randomCoverButton.classList.add('hidden');
   saveCoverButton.classList.add('hidden');
   homeButton.classList.remove('hidden');
-});
+};
 
-saveCoverButton.addEventListener("click", function() {
+function saveCurrentCover() {
   if (coverNotSaved(currentCover)) {
     savedCovers.push(currentCover);
     showNewSavedCover(currentCover);
   };
-});
-// Create your event handlers and other functions here 👇
-function displayRandomCover() {
-  currentCover = randomizedCover();
-  displayCover(currentCover);
 };
 
 // We've provided one function to get you started
