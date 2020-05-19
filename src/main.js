@@ -72,12 +72,13 @@ function displaySavedView() {
   randomCoverButton.classList.add('hidden');
   saveCoverButton.classList.add('hidden');
   homeButton.classList.remove('hidden');
+  showSavedCoversArray();
 };
 
 function saveCurrentCover() {
   if (coverNotSaved(currentCover)) {
     savedCovers.push(currentCover);
-    showNewSavedCover(currentCover);
+    // showNewSavedCover(currentCover);
   };
 };
 
@@ -117,14 +118,27 @@ function coverNotSaved(coverObject) {
   return true;
 };
 
-function showNewSavedCover(coverObject) {
-  savedCoversSection.insertAdjacentHTML(
-    'beforeend',
-    `<div class="mini-cover" id=${coverObject.id}>
+// function showNewSavedCover(coverObject) {
+//   savedCoversSection.insertAdjacentHTML(
+//     'beforeend',
+//     `<section class="mini-cover" id=${coverObject.id}>
+//       <img class="cover-image" id=${coverObject.id} src=${coverObject.cover}>
+//       <h2 class="cover-title" id=${coverObject.id}>${coverObject.title}</h2>
+//       <h3 class="tagline" id=${coverObject.id}>A tale of <span class="tagline-1">${coverObject.tagline1}</span> and <span class="tagline-2">${coverObject.tagline2}</span></h3>
+//       <img class="price-tag" id=${coverObject.id} src="./assets/price.png">
+//       <img class="overlay" id=${coverObject.id} src="./assets/overlay.png">
+//     </section>`);
+// };
+
+function showSavedCoversArray() {
+  for (var i = 0; i < savedCovers.length; i++) {
+    var coverObject = savedCovers[i];
+    savedCoversSection.innerHTML += `<section class="mini-cover" id=${coverObject.id}>
       <img class="cover-image" id=${coverObject.id} src=${coverObject.cover}>
       <h2 class="cover-title" id=${coverObject.id}>${coverObject.title}</h2>
       <h3 class="tagline" id=${coverObject.id}>A tale of <span class="tagline-1">${coverObject.tagline1}</span> and <span class="tagline-2">${coverObject.tagline2}</span></h3>
       <img class="price-tag" id=${coverObject.id} src="./assets/price.png">
       <img class="overlay" id=${coverObject.id} src="./assets/overlay.png">
-    </div>`);
+    </section>`;
+  };
 };
