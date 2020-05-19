@@ -30,7 +30,6 @@ savedCoversSection.addEventListener('dblclick', deleteClickedCover)
 
 function deleteClickedCover(event) {
   var deleteCoverID = event.target.id;
-  // console.log(deleteCoverID);
   for (var i = 0; i < savedCovers.length; i++) {
     if (savedCovers[i].id == event.target.id) {
       savedCovers.splice(i, 1);
@@ -84,7 +83,6 @@ function displaySavedView() {
 function saveCurrentCover() {
   if (coverNotSaved(currentCover)) {
     savedCovers.push(currentCover);
-    // showNewSavedCover(currentCover);
   };
 };
 
@@ -123,18 +121,6 @@ function coverNotSaved(coverObject) {
   };
   return true;
 };
-
-// function showNewSavedCover(coverObject) {
-//   savedCoversSection.insertAdjacentHTML(
-//     'beforeend',
-//     `<section class="mini-cover" id=${coverObject.id}>
-//       <img class="cover-image" id=${coverObject.id} src=${coverObject.cover}>
-//       <h2 class="cover-title" id=${coverObject.id}>${coverObject.title}</h2>
-//       <h3 class="tagline" id=${coverObject.id}>A tale of <span class="tagline-1">${coverObject.tagline1}</span> and <span class="tagline-2">${coverObject.tagline2}</span></h3>
-//       <img class="price-tag" id=${coverObject.id} src="./assets/price.png">
-//       <img class="overlay" id=${coverObject.id} src="./assets/overlay.png">
-//     </section>`);
-// };
 
 function showSavedCoversArray() {
   savedCoversSection.innerHTML = '';
