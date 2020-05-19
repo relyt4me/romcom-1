@@ -1,4 +1,3 @@
-// Create variables targetting the relevant DOM elements here 👇
 var coverImage = document.querySelector('.cover-image');
 var coverTitle = document.querySelector('.cover-title');
 var tagline1 = document.querySelector('.tagline-1');
@@ -17,12 +16,9 @@ var userDesc1 = document.querySelector('.user-desc1');
 var userDesc2 = document.querySelector('.user-desc2');
 var makeMyBookButton = document.querySelector('.create-new-book-button');
 var savedCoversSection = document.querySelector('.saved-covers-section');
-
-// We've provided a few variables below
 var savedCovers = [];
 var currentCover = randomizedCover();
 
-// Add your event listeners here 👇
 window.onload = displayCover(currentCover);
 randomCoverButton.addEventListener("click", displayRandomCover);
 makeMyBookButton.addEventListener('click', displayMyBook);
@@ -31,7 +27,15 @@ makeNewButton.addEventListener("click", displayFormView);
 viewSavedButton.addEventListener("click", displaySavedView);
 saveCoverButton.addEventListener("click", saveCurrentCover);
 
-// Create your event handlers and other functions here 👇
+function moveToHomePage() {
+  homePage.classList.remove('hidden');
+  randomCoverButton.classList.remove('hidden');
+  saveCoverButton.classList.remove('hidden');
+  formPage.classList.add('hidden');
+  savedCoversPage.classList.add('hidden');
+  homeButton.classList.add('hidden');
+};
+
 function displayRandomCover() {
   currentCover = randomizedCover();
   displayCover(currentCover);
@@ -71,13 +75,17 @@ function saveCurrentCover() {
   };
 };
 
-// We've provided one function to get you started
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
 };
 
 function randomizedCover() {
-  var randomCover = new Cover(covers[getRandomIndex(covers)], titles[getRandomIndex(titles)], descriptors[getRandomIndex(descriptors)], descriptors[getRandomIndex(descriptors)]);
+  var randomCover = new Cover(
+    covers[getRandomIndex(covers)],
+    titles[getRandomIndex(titles)],
+    descriptors[getRandomIndex(descriptors)],
+    descriptors[getRandomIndex(descriptors)]
+  );
   return randomCover;
 };
 
@@ -88,25 +96,16 @@ function displayCover(coverObject) {
   tagline2.innerText = coverObject.tagline2;
 };
 
-function moveToHomePage() {
-  homePage.classList.remove('hidden');
-  randomCoverButton.classList.remove('hidden');
-  saveCoverButton.classList.remove('hidden');
-  formPage.classList.add('hidden');
-  savedCoversPage.classList.add('hidden');
-  homeButton.classList.add('hidden');
-};
-
 function addInputToArrays() {
-    covers.push(coverInput.value);
-    titles.push(titleInput.value);
-    descriptors.push(userDesc1.value, userDesc2.value);
+  covers.push(coverInput.value);
+  titles.push(titleInput.value);
+  descriptors.push(userDesc1.value, userDesc2.value);
 };
 
 function coverNotSaved(coverObject) {
   for (var i = 0; i < savedCovers.length; i++) {
     if (savedCovers[i].id === coverObject.id) {
-        return false;
+      return false;
     };
   };
   return true;
