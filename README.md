@@ -39,4 +39,4 @@ Sunday May 17, 2020: Completed iteration 4 to get save cover button to save cove
 
 ![gif of save cover button click and saved cover page with saved covers](/readmeAssets/iteration4.gif)   
 
-Monday May 18, 2020:   
+Monday May 18, 2020: Refacored the main.js to fit with turing guide lines.  
