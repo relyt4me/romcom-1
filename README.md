@@ -39,4 +39,8 @@ Sunday May 17, 2020: Completed iteration 4 to get save cover button to save cove
 
 ![gif of save cover button click and saved cover page with saved covers](/readmeAssets/iteration4.gif)   
 
-Monday May 18, 2020: Refacored the main.js to fit with turing guide lines.  
+Monday May 18, 2020: Refactored the main.js to fit with Turing style guide lines.  
+
+Tuesday May 19, 2020: Completed iteration 5 to make double click events cause targeted saved books to be deleted from saved covers page and saved covers array.   
+
+![gif of double click deletion of targeted saved covers](/readmeAssets/iteration5.gif)  
