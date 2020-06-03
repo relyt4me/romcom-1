@@ -2,7 +2,7 @@
 
 [RomCom Project](https://relyt4me.github.io/romcom-1/)
 ## Contributors
-This project is a collaboration between Chadrick Dikerson https://github.com/chad-dickerson, Tyler Haglund https://github.com/relyt4me, and Scott Ertmer https://github.com/sertmer.
+This project is a collaboration between Chadrick Dikerson https://github.com/chadrick-d-dev, Tyler Haglund https://github.com/relyt4me, and Scott Ertmer https://github.com/sertmer.
 ## Objectives
 I this project we plan to write clean, DRY JavaScript to store our data; use a provided class by creating object instances using the `new` keyword; manipulate the page after it has loaded adding, removing, and updating elements on the DOM; Develop an understanding of event bubbling and use event delegation on dynamic elements; and begin to understand how to write effective, clean HTML & CSS.
 ## Overview
